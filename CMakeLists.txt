@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project(OpenCV-Experiments)
+find_package(OpenCV REQUIRED)
+add_executable(build/display-image src/display-image.cpp)
+target_link_libraries(build/display-image ${OpenCV_LIBS})
