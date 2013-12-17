@@ -28,11 +28,13 @@ int main(int argc, char** argv) {
         cv::Mat image(raspiCamCvQueryFrame(camera));
         std::string window_name = "Display";
         cv::namedWindow(window_name, CV_WINDOW_AUTOSIZE);
+        int pressed_key = 0;
         if (run_type == "still") {
             cv::imshow(window_name, image);
-            cv::waitKey(0);
+            do {
+                pressed_key = cv::waitKey(0);
+            } while (pressed_key != 27);
         } else {
-            int pressed_key = 0;
             do {
                 cv::Mat image(raspiCamCvQueryFrame(camera));
                 cv::imshow(window_name, image);
