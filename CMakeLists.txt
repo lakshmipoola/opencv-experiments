@@ -25,8 +25,11 @@ SET(DISPLAY_CAMERA_LIBS
     ${MMAL_LIBS} ${BCM_LIBS} ${OpenCV_LIBS})
 
 SET(DISPLAY_IMAGE build/display-image)
+SET(DISPLAY_VIDEO build/display-video)
 SET(DISPLAY_CAMERA build/display-camera)
 add_executable(${DISPLAY_IMAGE} src/display-image.cpp)
+add_executable(${DISPLAY_VIDEO} src/display-video.cpp)
 add_executable(${DISPLAY_CAMERA} src/display-camera.cpp)
 target_link_libraries(${DISPLAY_IMAGE} ${OpenCV_LIBS})
+target_link_libraries(${DISPLAY_VIDEO} ${OpenCV_LIBS})
 target_link_libraries(${DISPLAY_CAMERA} ${DISPLAY_CAMERA_LIBS})
